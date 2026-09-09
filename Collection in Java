@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<String> students = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        students.add("Ravi");
+        students.add("Priya");
+        students.add("Kumar");
+        students.add("Anu");
+
+        System.out.println("Student List:");
+        for (String name : students) {
+            System.out.println(name);
+        }
+
+        System.out.print("\nEnter name to search: ");
+        String search = sc.next();
+
+        if (students.contains(search))
+            System.out.println("Student Found");
+        else
+            System.out.println("Student Not Found");
+
+        students.remove("Kumar");
+
+        System.out.println("\nAfter Removing Kumar:");
+        for (String name : students) {
+            System.out.println(name);
+        }
+
+        System.out.println("\nTotal Students: " + students.size());
+    }
+}
