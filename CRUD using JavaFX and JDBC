@@ -1,0 +1,39 @@
+import java.sql.*;
+
+public class CRUD {
+    public static void main(String[] args) {
+        try {
+            Connection con = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/college",
+                "root", "root");
+
+            Statement st = con.createStatement();
+
+            // Create
+            st.executeUpdate(
+                "insert into student values(1,'Ravi')");
+
+            // Read
+            ResultSet rs = st.executeQuery("select * from student");
+
+            while (rs.next()) {
+                System.out.println(rs.getInt(1) + " " +
+                                   rs.getString(2));
+            }
+
+            // Update
+            st.executeUpdate(
+                "update student set name='Kumar' where id=1");
+
+            // Delete
+            st.executeUpdate(
+                "delete from student where id=1");
+
+            System.out.println("CRUD Operations Completed");
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
