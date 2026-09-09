@@ -1,0 +1,12 @@
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+
+        Integer obj = a;       // Autoboxing
+        int b = obj;           // Unboxing
+
+        System.out.println("Primitive value = " + a);
+        System.out.println("Wrapper value = " + obj);
+        System.out.println("Unboxed value = " + b);
+    }
+}
