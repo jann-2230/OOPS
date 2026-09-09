@@ -1,0 +1,16 @@
+package currency;
+
+public class Currency {
+    public void convert(double rupees) {
+        System.out.println("Dollar = " + rupees / 83);
+        System.out.println("Euro = " + rupees / 90);
+    }
+}
+import currency.Currency;
+
+public class Main {
+    public static void main(String[] args) {
+        Currency c = new Currency();
+        c.convert(8300);
+    }
+}
